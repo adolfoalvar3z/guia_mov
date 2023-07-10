@@ -1,0 +1,13 @@
+
+<h1>Guia movimientos</h1>
+
+<div id="guia_movimientos">
+  <% @guia_movimientos.each do |guia_movimiento| %>
+    <%= render guia_movimiento %>
+    <p>
+      <%= link_to "Show this guia movimiento", guia_movimiento %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Nueva guia movimiento", new_guia_movimiento_path %>

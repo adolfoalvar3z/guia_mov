@@ -1,0 +1,44 @@
+<%= form_with(model: guia_movimiento) do |form| %>
+  <% if guia_movimiento.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(guia_movimiento.errors.count, "error") %> prohibited this guia_movimiento from being saved:</h2>
+      <ul>
+        <% guia_movimiento.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.select :user_id, options_for_select(@users.map {|user| [user.name, user.id]}), {include_blank: "Seleccionar usuario" }, class: "form-select" %>
+  </div>
+  <div>
+    <%= form.label :nombre_receptor, style: "display: block" %>
+    <%= form.text_field :nombre_receptor,class: "form-control" %>
+  </div>
+  <div>
+    <%= form.label :email_receptor, style: "display: block" %>
+    <%= form.text_field :email_receptor,class: "form-control" %>
+  </div>
+  <div>
+    <%= form.label :unidad_receptor, style: "display: block" %>
+    <%= form.select :unidad_receptor, options_for_select(@unidads.map { |unidad| [unidad.nombre, unidad.nombre] }),{include_blank: "Seleccionar Unidad" }, class: "form-select" %>
+  </div>
+  <div>
+    <%= form.label :estado, style: "display: block" %>
+    <%= form.select :estado, options_for_select(["Pendiente", "Completada", "Anulada"]), {include_blank: "Seleccionar Estado" },class: "form-select" %>
+  </div>
+  <div>
+    <%= form.label :observacion, style: "display: block" %>
+    <%= form.text_area :observacion, class: "form-control" %>
+  </div>
+  <div>
+    <%= form.label :guia_firmada, style: "display: block" %>
+    <%= form.file_field :guia_firmada, class: "form-control" %>
+  </div>
+  <br>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

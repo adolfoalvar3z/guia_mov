@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @guia_movimiento %>
+
+<div>
+  <%= link_to "Edit this guia movimiento", edit_guia_movimiento_path(@guia_movimiento) %> |
+  <%= link_to "Back to guia movimientos", guia_movimientos_path %>
+
+  <%= button_to "Destroy this guia movimiento", @guia_movimiento, method: :delete %>
+</div>

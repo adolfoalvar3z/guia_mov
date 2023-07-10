@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  nombre_receptor: MyString
+  email_receptor: MyString
+  unidad_receptor: MyString
+  observacion: MyText
+
+two:
+  user: two
+  nombre_receptor: MyString
+  email_receptor: MyString
+  unidad_receptor: MyString
+  observacion: MyText

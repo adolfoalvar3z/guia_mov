@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Unidads</h1>
+
+<div id="unidads">
+  <% @unidads.each do |unidad| %>
+    <%= render unidad %>
+    <p>
+      <%= link_to "Show this unidad", unidad %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New unidad", new_unidad_path %>
