@@ -1,5 +1,6 @@
 class UnidadsController < ApplicationController
   before_action :set_unidad, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /unidads or /unidads.json
   def index
