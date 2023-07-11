@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  codigoInterno: 1
+  stock: 1
+  stockMin: 1
+  foto: MyText
+
+two:
+  nombre: MyString
+  codigoInterno: 1
+  stock: 1
+  stockMin: 1
+  foto: MyText
