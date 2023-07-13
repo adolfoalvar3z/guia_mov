@@ -19,7 +19,7 @@
         <% end %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <%= user_signed_in? ? current_user.email : "Opciones" %>
+            <%= user_signed_in? ? current_user.name : "Opciones" %>
           </a>
           <ul class="dropdown-menu">
             <% if user_signed_in? %>
