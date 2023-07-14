@@ -11,7 +11,7 @@
   <% end %>
   <div>
     <%= form.label :user_id, style: "display: block" %>
-    <%= form.select :user_id, options_for_select(@users.map {|user| [user.name, user.id]}), {include_blank: "Seleccionar usuario" }, class: "form-select" %>
+    <%= form.text_field :user_id, value: current_user.name,readonly: "true", class: "form-control" %>
   </div>
   <div>
     <%= form.label :nombre_receptor, style: "display: block" %>

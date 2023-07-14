@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   resources :products
   resources :unidads
   get '/home', to: "home#index"
