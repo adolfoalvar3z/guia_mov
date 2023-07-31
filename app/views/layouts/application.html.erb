@@ -7,7 +7,6 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-
   </head>
 <body id="page-top" class="<%= user_signed_in? ? '' : 'bg-gradient-primary' %>">
 <% if user_signed_in? %>
@@ -24,13 +23,11 @@
               <%= render "shared/nav" %>
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
+                <div class="container">
                   <!-- Page Heading -->
 <% end %>
-
                   <%= yield %>
 <% if user_signed_in? %>
-
                 </div>
                 <!-- /.container-fluid -->
             </div>
