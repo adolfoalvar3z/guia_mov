@@ -7,15 +7,10 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <%= stylesheet_link_tag "sb-admin-2.min"%>
-    <%= stylesheet_link_tag "all"%>
+
   </head>
-  <body>
-    <div class="container-fluid">
-      <% if user_signed_in? %>
-        <%= render "shared/navbar" %>
-      <% end %>
-    </div>
+<body id="page-top" class="<%= user_signed_in? ? '' : 'bg-gradient-primary' %>">
+<% if user_signed_in? %>
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
@@ -30,27 +25,21 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                <% if notice.present? %>
-                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong><%= notice %></strong>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                  </div>
-                <% end %>
                   <!-- Page Heading -->
+<% end %>
+
                   <%= yield %>
+<% if user_signed_in? %>
+
                 </div>
                 <!-- /.container-fluid -->
             </div>
             <!-- End of Main Content -->
+
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
-                    </div>
-                </div>
-            </footer>
+              <%= render "shared/footer" %>
             <!-- End of Footer -->
+
         </div>
         <!-- End of Content Wrapper -->
     </div>
@@ -78,6 +67,13 @@
             </div>
         </div>
     </div>
-    <%= javascript_include_tag "sb-admin-2.min" %>
+
+    <%= javascript_include_tag "jquery" %>
+    <%= javascript_include_tag "all.min" %>
+    <%= javascript_include_tag "bootstrap.bundle" %>
+    <%= javascript_include_tag "jquery.easing" %>
+    <%= javascript_include_tag "sb-admin-2" %>
+<% end %>
+
   </body>
 </html>
