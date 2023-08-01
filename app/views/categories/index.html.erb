@@ -1,14 +1,28 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Categories</h1>
-
+<h1>Categorias</h1>
+<div class="row my-4">
+  <%= link_to "Nueva Categoría", new_category_path, class:"btn btn-success" %>
+</div>
 <div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
-  <% end %>
+<div class="table-responsive">
+  <table class="table" id="dataTable">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @categories.each do |category| %>
+        <%= render category %>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
-<%= link_to "New category", new_category_path %>
+
+
+</div>
+
