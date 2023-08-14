@@ -1,14 +1,40 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Products</h1>
+<h1>Productos</h1>
+<div class="row my-4">
 
-<div id="products">
-  <% @products.each do |product| %>
-    <%= render product %>
-    <p>
-      <%= link_to "Show this product", product %>
-    </p>
-  <% end %>
+<%= link_to "New product", new_product_path, class:"btn btn-success" %>
+</div>
+<div class="table-responsive text-center">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Codigo interno</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Stock minimo</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+     <% @products.each do |product| %>
+      <tr class="">
+        <td scope="row"><%= product.nombre %></td>
+        <td><%= product.codigoInterno %></td>
+        <td><%= product.stock %></td>
+        <td><%= product.stockMin %></td>
+        <td>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <%= link_to "Ver", product_path(product.id), class:"btn btn-primary" %>
+            <%= link_to "Editar", edit_product_path(product.id), class:"btn btn-warning" %>
+            <%= button_to "Destruir", product_path(product.id), method: :delete, data: { confirm: '¿Estás seguro?' }, class:"btn btn-danger" %>
+        </div>
+
+        </td>
+      </tr>
+      <% end %>
+
+    </tbody>
+  </table>
 </div>
 
-<%= link_to "New product", new_product_path %>

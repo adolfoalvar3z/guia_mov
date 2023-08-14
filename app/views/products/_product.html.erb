@@ -21,7 +21,9 @@
 
   <p>
     <strong>Foto:</strong>
-    <%= product.foto %>
+    <% if product.foto.attached? %>
+      <%= image_tag product.foto, class:"img-fluid img-thumbnail"  %>
+    <% end %>
   </p>
 
 </div>

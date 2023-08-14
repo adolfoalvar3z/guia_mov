@@ -12,50 +12,58 @@
 
   <div>
     <%= form.label :nombre, style: "display: block" %>
-    <%= form.text_field :nombre, class: "form-input" %>
+    <%= form.text_field :nombre, class:"form-control" %>
   </div>
 
   <div>
     <%= form.label :codigoInterno, style: "display: block" %>
-    <%= form.number_field :codigoInterno, class: "form-input" %>
+    <%= form.number_field :codigoInterno, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :stock, style: "display: block" %>
-    <%= form.number_field :stock, class: "form-input" %>
+    <%= form.number_field :stock, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :stockMin, style: "display: block" %>
-    <%= form.number_field :stockMin, class: "form-input" %>
+    <%= form.number_field :stockMin, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :marca, style: "display: block" %>
-    <%= form.text_field :marca, class: "form-input" %>
+    <%= form.text_field :marca, class: "form-control" %>
   </div>
 
     <div>
     <%= form.label :modelo, style: "display: block" %>
-    <%= form.text_field :modelo, class: "form-input" %>
+    <%= form.text_field :modelo, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :category_id, style: "display: block" %>
-    <%= form.select :category_id, options_from_collection_for_select(@categories, :id, :name), class: "form-select" %>
+    <%= form.select :category_id, options_from_collection_for_select(@categories, :id, :name), {},class: "form-select" %>
   </div>
 
   <div>
     <%= form.label :description, style: "display: block" %>
-    <%= form.text_area  :description, class: "form-input" %>
+    <%= form.text_area  :description, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :foto, style: "display: block" %>
-    <%= form.file_field :foto %>
+    <%= form.file_field :foto, class: "form-control", accept:"image/png, .jpeg, .jpg, image/gif" %>
+    <% if product.foto.attached? %>
+    <%= image_tag product.foto, class:"img-fluid img-thumbnail"%>
+    <% end %>
   </div>
   <br>
   <div>
+
+<div class="d-grid gap-2">
+
     <%= form.submit "Registrar", class: "btn btn-primary" %>
+    </div>
+
   </div>
 <% end %>

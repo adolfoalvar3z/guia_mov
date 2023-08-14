@@ -38,6 +38,41 @@
     <%= form.file_field :guia_firmada, class: "form-control" %>
   </div>
   <br>
+  <hr>
+<div class="row">
+  <div class="col-12">
+<table class="table">
+                                <thead align="center">
+                                <tr>
+                                <th style="width:10%;">ID</th>
+                                <th>Nombre</th>
+                                <th style="width:10%;">Cantidad</th>
+                                <th>Marca</th>
+                                <th>Modelo</th>
+                                <th>Codigo Interno</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                <td style="width:10%;"><input type="number" class="form-control" readonly="" required="" name="id1" id="id1"></td>
+                                <td>
+                                <input class="form-control" type="text" id="producto1" name="producto1" onchange="busquedaproducto1()" list="movies">
+                                <datalist id="movies">
+                                  <option value=" UPS">Abrelex - UPS - AB-ES752CI</option>
+                                </datalist>
+                                    </td>
+                                    <td><%= form.number_field :cantidad , class:"form-control", min:"0" %></td>
+                                    <td><%= form.text_field :marca , class:"form-control" %></td>
+                                    <td><%= form.text_field :modelo , class:"form-control" %></td>
+                                    <td><%= form.text_field :serie , class:"form-control" %></td>
+                                    </tr>
+  </tbody>
+    </table>
+
+  </div>
+</div>
+
+  <hr>
   <div>
     <%= form.submit %>
   </div>
